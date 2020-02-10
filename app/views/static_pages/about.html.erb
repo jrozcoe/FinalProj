@@ -53,14 +53,14 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('about-bg.jpg')">
+  <header class="masthead" style="background-image: url('img/about-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
-            <h1>About Me</h1>
-            <span class="subheading">Ayyyyy lmao</span>
+            <h1>Australia Bushfires</h1>
+           
           </div>
         </div>
       </div>
@@ -71,12 +71,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p> Welcome! My name is Jordan and I am a software engineer, gardener, and foster mom. I am very passionate about animal welfare and am dedicating this blog to my experiences and reputable organizations that you can donate to.</p>
-
-        <p> I grew up in South Florida, where my dad worked with the local wildlife agency. We went to national parks and museums, where I was taught about wildlife conservation from a very young age. Although cats aren't necessarily consodered "wildlife", my passion as of recently, however, is fostering and caring for domesticated cats and kittens in my area. I've seen the havoc they wreak on local wildlife, along with the copius amounts of them in colonies in my city.  </p>
-        <p>I started fostering kittens in college when I found a young feral kitten in my neighborhood and took him in. His name was Salem and he had been completely unsocialized up until the point where I found him. His mother was also completely feral and had three whole litters of kittens that year, and created an entire colony of cats in my neighborhood. If these animals were not fixed and vaccinated, the neighborhood would be overrun with feral cats and disease. </p>
-        <p>This is the point in my life where I became involved in Trap-Neuter-Return (TNR) to stop my neighborhood from becoming a massive colony for cats. There would just be other kittens like Salem, without a home, adding to the kitten problem. Reducing overall cat population in the area would be beneficial for all parties involved.</p>
-
+       Australia bushfire info
       </div>
     </div>
   </div>
@@ -118,6 +113,12 @@
         </div>
       </div>
     </div>
+     <div class="clear"></div>
+    <%= simple_form_for @comment, url: '#' do |f| %>
+    <%= f.input :message %>
+    <%= f.input :rating %>
+    <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+    <% end %>
   </footer>
 
   <!-- Bootstrap core JavaScript -->
