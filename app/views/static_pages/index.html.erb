@@ -13,11 +13,6 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
   <!-- Custom styles for this template -->
   <link href="css/clean-blog.min.css" rel="stylesheet">
 
@@ -26,10 +21,25 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+
+  <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle-right" data-toggle="dropdown">
+    Menu
+  </button>
+  <div class="dropdown-menu">
+    <%= link_to('Home', {:action => 'index' }) %><br /> 
+    <%= link_to('About Me',{:action => 'about'}) %><br /> 
+    <%= link_to('Donate',{:action => 'index', :Page => 3, :id => 2}) %><br /> 
+  </div>
+</div>
+  <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="index.html.erb">Start Bootstrap</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
         Menu
         <i class="fas fa-bars"></i>
       </button>
@@ -50,17 +60,17 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('about-bg.jpg')">
+  <header class="masthead">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
             <h1>About Me</h1>
-            <span class="subheading">Ayyyyy lmao</span>
+            <span class="subheading"></span>
           </div>
         </div>
       </div>
@@ -74,6 +84,10 @@
         <p> Welcome! My name is Jordan and I am a software engineer, gardener, and foster mom. I am very passionate about animal welfare and am dedicating this blog to my experiences and reputable organizations that you can donate to.</p>
 
         <p> I grew up in South Florida, where my dad worked with the local wildlife agency. We went to national parks and museums, where I was taught about wildlife conservation from a very young age. Although cats aren't necessarily consodered "wildlife", my passion as of recently, however, is fostering and caring for domesticated cats and kittens in my area. I've seen the havoc they wreak on local wildlife, along with the copius amounts of them in colonies in my city.  </p>
+
+
+      <img class="img-fluid" src="https://jordan-roszkowiak-picturebucket.s3.amazonaws.com/William.jpg" alt="Chania">
+
         <p>I started fostering kittens in college when I found a young feral kitten in my neighborhood and took him in. His name was Salem and he had been completely unsocialized up until the point where I found him. His mother was also completely feral and had three whole litters of kittens that year, and created an entire colony of cats in my neighborhood. If these animals were not fixed and vaccinated, the neighborhood would be overrun with feral cats and disease. </p>
         <p>This is the point in my life where I became involved in Trap-Neuter-Return (TNR) to stop my neighborhood from becoming a massive colony for cats. There would just be other kittens like Salem, without a home, adding to the kitten problem. Reducing overall cat population in the area would be beneficial for all parties involved.</p>
 
@@ -82,6 +96,28 @@
   </div>
 
   <hr>
+<div id="respond">
+
+  <h3>Leave a Comment</h3>
+
+  <form action="post_comment.php" method="post" id="commentform">
+
+    <label for="comment_author" class="required">Your name</label>
+    <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="required">
+
+    <label for="email" class="required">Your email;</label>
+    <input type="email" name="email" id="email" value="" tabindex="2" required="required">
+
+    <label for="comment" class="required">Your message</label>
+    <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+
+    
+    <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+    <input name="submit" type="submit" value="Submit comment" />
+
+  </form>
+
+</div>
 
   <!-- Footer -->
   <footer>
